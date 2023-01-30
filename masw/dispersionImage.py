@@ -1,6 +1,6 @@
 import numpy as np
 
-def dispersion_image(u, N, dx, xo, dt, cT_min, cT_max, delta_cT, fmin, fmax):
+def dispersionImage(u, N, dx, xo, dt, cT_min, cT_max, delta_cT, fmin, fmax):
   """This function is used for generated dispersion image of surface waves
 
   Args:
@@ -55,7 +55,7 @@ def dispersion_image(u, N, dx, xo, dt, cT_min, cT_max, delta_cT, fmin, fmax):
   LcT = len(cT)
   
   ## Empty matrices with Lu lines and n columns
-  c = np.zeros((LU, LcT))
+  c = np.zeros((LU,LcT))
   f = np.zeros((LU,LcT))
   A = np.zeros((LU,LcT))
   
@@ -81,6 +81,7 @@ def dispersion_image(u, N, dx, xo, dt, cT_min, cT_max, delta_cT, fmin, fmax):
           ## Compute absolute value and normalize with respect to number of 
           ## receiver
           A[j,k] = np.abs(temp) / N
+          
 
   # Filtering signal
   resolution = 100
